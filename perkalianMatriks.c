@@ -11,6 +11,11 @@ Program digunakan untuk ...
 #include <stdlib.h>
 #include <math.h>
 
+int kali10(int matriksA[10][10], int matriksB[10][10]);
+int kali100(int matriksA[100][100], int matriksB[100][100]);
+int kali1000(int matriksA[1000][1000], int matriksB[1000][1000]);
+int kali10000(int matriksA[10000][10000], int matriksB[10000][10000]);
+
 int main(){
     int n;
     printf("Pilihan ukuran matriks\n");
@@ -23,7 +28,7 @@ int main(){
 
     int ukuran;
     if (n == 1){
-        ukuran = 2;
+        ukuran = 10;
     }
     else if (n == 2){
         ukuran = 100;
@@ -58,6 +63,24 @@ int main(){
         printf("\n");
     }
 
+    if (n == 1){
+        kali10(matriksA,matriksB);
+    }
+    else if (n == 2){
+        kali100(matriksA,matriksB);
+    }
+    else if (n == 3){
+        kali1000(matriksA,matriksB);
+    }
+    else if (n == 4){
+        kali10000(matriksA,matriksB);
+    }
+
+    return 0;
+}
+
+int kali10(int matriksA[10][10], int matriksB[10][10]){
+    int ukuran = 10;
     int hasil[ukuran][ukuran];
     for (int m = 0; m < ukuran; m++){
         for (int n = 0; n < ukuran; n++){
@@ -75,8 +98,67 @@ int main(){
         }
         printf("\n");
     }
+}
 
-    printf("\n");
+int kali100(int matriksA[100][100], int matriksB[100][100]){
+    int ukuran = 100;
+    int hasil[ukuran][ukuran];
+    for (int m = 0; m < ukuran; m++){
+        for (int n = 0; n < ukuran; n++){
+            hasil[m][n] = 0;
+        }        
+    }
 
-    return 0;
+    printf("\nHasil kali matrix\n");
+    for (int i = 0; i < ukuran; i++){
+        for (int j = 0; j < ukuran; j++){
+            for (int k = 0; k < ukuran; k++){
+                hasil[i][j] += matriksA[i][k] * matriksB[k][j];
+            }
+            printf("%d ",hasil[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int kali1000(int matriksA[1000][1000], int matriksB[1000][1000]){
+    int ukuran = 1000;
+    int hasil[ukuran][ukuran];
+    for (int m = 0; m < ukuran; m++){
+        for (int n = 0; n < ukuran; n++){
+            hasil[m][n] = 0;
+        }        
+    }
+
+    printf("\nHasil kali matrix\n");
+    for (int i = 0; i < ukuran; i++){
+        for (int j = 0; j < ukuran; j++){
+            for (int k = 0; k < ukuran; k++){
+                hasil[i][j] += matriksA[i][k] * matriksB[k][j];
+            }
+            printf("%d ",hasil[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int kali10000(int matriksA[10000][10000], int matriksB[10000][10000]){
+    int ukuran = 10000;
+    int hasil[ukuran][ukuran];
+    for (int m = 0; m < ukuran; m++){
+        for (int n = 0; n < ukuran; n++){
+            hasil[m][n] = 0;
+        }        
+    }
+
+    printf("\nHasil kali matrix\n");
+    for (int i = 0; i < ukuran; i++){
+        for (int j = 0; j < ukuran; j++){
+            for (int k = 0; k < ukuran; k++){
+                hasil[i][j] += matriksA[i][k] * matriksB[k][j];
+            }
+            printf("%d ",hasil[i][j]);
+        }
+        printf("\n");
+    }
 }
