@@ -48,7 +48,7 @@ int main(){
     printf("\nMatrix 1\n");
     for (int i = 0; i < ukuran; i++){
         for (int j = 0; j < ukuran; j++){
-            matriksA[i][j] = rand() % 3;
+            matriksA[i][j] = rand() % 11;
             printf("%d ",matriksA[i][j]);
         }
         printf("\n");
@@ -57,7 +57,7 @@ int main(){
     printf("\nMatrix 2\n");
     for (int i = 0; i < ukuran; i++){
         for (int j = 0; j < ukuran; j++){
-            matriksB[i][j] = rand() % 3;
+            matriksB[i][j] = rand() % 11;
             printf("%d ",matriksB[i][j]);
         }
         printf("\n");
